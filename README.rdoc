@@ -1,0 +1,24 @@
+= Detroit ExtConf Tool
+
+
+== DESCRIPTION
+
+The ExtConf tool utilizes extconf.rb script and Autotools standard
+Makefile to compile native extensions.
+
+NOTE: By neccessity this tool shells out to the command line.
+
+
+== INSTALL
+
+  $ gem install detroit-extconf
+
+
+== COPYRIGHT
+
+Copyright (c) 2011 Thomas Sawyer
+
+GPL v.3 license
+
+See COPYING.rdoc and GPL3.txt file for details.
+
