@@ -26,23 +26,26 @@ module Detroit
     # Compile statically? Applies only to compile method. (false)
     attr_accessor :static
 
+
+    #  A S S E M B L Y  S T A T I O N S
+
     #
-    def initialize_defaults
-      @static = false
+    def station_compile
+      compile
     end
 
-    # Check to see if this project has extensions that need to be compiled.
-    def compiles?
-      !extensions.empty?
+    #
+    def station_clean
+      clean
     end
 
-    # Extension directories. Often this will simply be 'ext'.
-    # but sometimes more then one extension is needed and are kept
-    # in separate directories. This works by looking for ext/**/*.c
-    # files, where ever they are is considered an extension directory.
-    def extensions
-      @extensions ||= Dir['ext/**/*.c'].collect{ |file| File.dirname(file) }.uniq
+    #
+    def station_purge
+      purge
     end
+
+
+    #  S E R V I C E  M E T H O D S
 
     # Create Makefile(s).
     def configure
@@ -81,22 +84,25 @@ module Detroit
 
     alias_method :purge, :distclean
 
-    #
-    def assembly_compile
-      compile
+    # Check to see if this project has extensions that need to be compiled.
+    def compiles?
+      !extensions.empty?
     end
 
-    #
-    def assembly_clean
-      clean
+    # Extension directories. Often this will simply be 'ext'.
+    # but sometimes more then one extension is needed and are kept
+    # in separate directories. This works by looking for ext/**/*.c
+    # files, where ever they are is considered an extension directory.
+    def extensions
+      @extensions ||= Dir['ext/**/*.c'].collect{ |file| File.dirname(file) }.uniq
     end
 
-    #
-    def assembly_purge
-      purge
-    end
+  private
 
-    private
+    #
+    def initialize_defaults
+      @static = false
+    end
 
     def make(target='')
       extensions.each do |directory|
