@@ -1,0 +1,46 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "DETROIT\-EXTCONF" "5" "October 2011" "" ""
+.
+.SH "DESCRIPTION"
+The ExtConf tool utilizes \fBextconf\.rb\fR script and Autotools standard \fBMakefile\fR to compile native extensions\.
+.
+.P
+By necessity this tool shells out to the command line\. On Windows system this plug\-in uses \fBnmake\fR rather than \fBmake\fR\.
+.
+.P
+Please note this is a very basic extension compiler plug\-in\. It could use some effort made to improve it, or be supplanted by a more capable plug\-in, such as one based on rake\-compiler\.
+.
+.P
+All extensions must be located within the project \fBext/\fR directory\.
+.
+.SH "OPTIONS"
+.
+.IP "\(bu" 4
+\fBstatic\fR \- Compile statically\. This applies only to compile phase and defaults to \fBfalse\fR\.
+.
+.IP "" 0
+.
+.SH "EXAMPLES"
+Since there are so few options, the typical usage is simply:
+.
+.IP "" 4
+.
+.nf
+
+extconf:
+  static: false
+.
+.fi
+.
+.IP "" 0
+.
+.SH "COPYRIGHT"
+Copyright (c) 2010 Thomas Sawyer, Rubyworks
+.
+.P
+Detroit ExtConf is distributable in accordance with the GPLv3 license\.
+.
+.SH "SEE ALSO"
+dnote(1)

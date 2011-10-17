@@ -31,20 +31,9 @@ module Detroit
 
     #  A S S E M B L Y  S T A T I O N S
 
-    #
-    def station_compile
-      compile
-    end
-
-    #
-    def station_clean
-      clean
-    end
-
-    #
-    def station_purge
-      purge
-    end
+    def station_compile ; compile ; end
+    def station_clean   ; clean   ; end
+    def station_purge   ; purge   ; end
 
 
     #  S E R V I C E  M E T H O D S
@@ -134,6 +123,12 @@ module Detroit
     #def make_mingw
     #  abort "NOT YET IMPLEMENTED"
     #end
+
+  public
+
+    def self.man_page
+      File.dirname(__FILE__)+'/../man/detroit-dnote.5'
+    end
 
   end
 
