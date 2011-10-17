@@ -15,10 +15,12 @@ plug-in, such as one based on rake-compiler.
 
 All extensions must be located within the project `ext/` directory.
 
+
 ## OPTIONS
 
   * `static` - Compile statically. This applies only to compile phase
     and defaults to `false`.
+
 
 ## EXAMPLES
 
@@ -28,11 +30,21 @@ Since there are so few options, the typical usage is simply:
       static: false
 
 
+## RESOURCES
+
+For more information:
+
+  * [API Documentation](http://rubydoc.info/gems/detroit-extconf)
+
+  * [Development Site](http://github.com/detroit/detroit-extconf)
+
+
 ## COPYRIGHT
 
 Copyright (c) 2010 Thomas Sawyer, Rubyworks
 
 Detroit ExtConf is distributable in accordance with the GPLv3 license.
+
 
 ## SEE ALSO
 
