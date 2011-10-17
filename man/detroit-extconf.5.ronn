@@ -1,5 +1,5 @@
-detroit-extconf5) - compile ruby extensions
-===========================================
+detroit-extconf(5) - compile ruby extensions
+============================================
 
 ## DESCRIPTION
 
