@@ -1,5 +1,9 @@
 = Detroit ExtConf Tool
 
+{Website}[http://rubyworks.github.com/detroit-extconf] /
+{Report Issue}[http://github.com/rubyworks/detroit-extconf/issues] /
+{Repository}[http://github.com/rubyworks/detroit-extconf]
+
 
 == DESCRIPTION
 
@@ -18,7 +22,8 @@ NOTE: By neccessity this tool shells out to the command line.
 
 Copyright (c) 2011 Thomas Sawyer
 
-GPL v.3 license
+Detroit ExtConf is distributable under the GNU General Public License version 3
+or greater (GPL-3.0+).
 
-See COPYING.rdoc and GPL3.txt file for details.
+See COPYING.rdoc and LICENSE.txt file for details.
 
