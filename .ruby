@@ -22,10 +22,12 @@ extra: {}
 load_path:
 - lib
 revision: 0
+created: '2011-10-16'
 summary: ExtConf plugin for Detroit
 title: Detroit ExtConf
 version: 0.2.0
 name: detroit-extconf
+suite: detroit
 description: ExtConf plugin for Detroit build system. The plugin compiles Ruby C extensions
   during the compile phase.
 organization: rubyworks
