@@ -29,11 +29,22 @@ module Detroit
     attr_accessor :static
 
 
-    #  A S S E M B L Y  S T A T I O N S
+    #  A S S E M B L Y
 
-    def station_compile ; compile ; end
-    def station_clean   ; clean   ; end
-    def station_purge   ; purge   ; end
+    def assemble?(station, options={})
+      case station
+      when :compile, :clean, :purge
+        compiles?
+      end
+    end
+
+    def assemble(station, options={})
+      case station
+      when :compile then compile
+      when :clean   then clean
+      when :purge   then purge
+      end
+    end
 
 
     #  S E R V I C E  M E T H O D S
