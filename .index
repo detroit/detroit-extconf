@@ -1,0 +1,44 @@
+---
+revision: 2013
+type: ruby
+sources:
+- var
+authors:
+- name: T. Sawyer
+  email: transfire@gmail.com
+organizations:
+- name: Rubyworks
+requirements:
+- version: 0.3.0+
+  name: detroit
+conflicts: []
+alternatives: []
+resources:
+- type: home
+  uri: http://detroit.github.com/
+  label: Homepage
+- type: code
+  uri: http://github.com/detroit/detroit-extconf
+  label: Source Code
+- type: mail
+  uri: http://groups.google.com/group/rubyworks-mailinglist
+  label: Mailing List
+repositories: []
+categories: []
+copyrights:
+- holder: Thomas Sawyer
+  year: '2011'
+  license: GPL3
+customs: []
+paths:
+  lib:
+  - lib
+created: '2011-10-16'
+summary: ExtConf plugin for Detroit
+title: Detroit ExtConf
+version: 0.2.0
+name: detroit-extconf
+suite: detroit
+description: ExtConf plugin for Detroit build system. The plugin compiles Ruby C extensions
+  during the compile phase.
+date: '2013-03-18'
