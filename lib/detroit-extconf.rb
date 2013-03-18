@@ -1,4 +1,4 @@
-require 'detroit/tool'
+require 'detroit-standard'
 
 module Detroit
 
@@ -17,6 +17,9 @@ module Detroit
   # TODO: current? method
   #++
   class ExtConf < Tool
+
+    # Belongs to standard assembly.
+    system :standard
 
     #def self.available?
     #  #... check for make tools ...
