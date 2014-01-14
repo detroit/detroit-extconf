@@ -9,8 +9,9 @@ authors:
 organizations:
 - name: Rubyworks
 requirements:
-- version: 0.3.0+
+- version: 0.4.0+
   name: detroit
+- name: detroit-standard
 conflicts: []
 alternatives: []
 resources:
@@ -26,19 +27,19 @@ resources:
 repositories: []
 categories: []
 copyrights:
-- holder: Thomas Sawyer
+- holder: Rubyworks
   year: '2011'
-  license: GPL3
+  license: GPL-3.0
 customs: []
 paths:
   lib:
   - lib
-created: '2011-10-16'
-summary: ExtConf plugin for Detroit
-title: Detroit ExtConf
-version: 0.2.1
 name: detroit-extconf
-suite: detroit
+title: Detroit ExtConf
+summary: ExtConf plugin for Detroit
+created: '2011-10-16'
 description: ExtConf plugin for Detroit build system. The plugin compiles Ruby C extensions
   during the compile phase.
-date: '2013-03-18'
+suite: detroit
+version: 0.4.0
+date: '2014-01-13'

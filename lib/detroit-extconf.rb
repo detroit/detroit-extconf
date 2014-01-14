@@ -2,57 +2,47 @@ require 'detroit-standard'
 
 module Detroit
 
-  #
-  def ExtConf(options={})
-    ExtConf.new(options)
-  end
-
+  ##
   # The ExtConf tool utilizes extconf.rb script and Autotools standard Makefile
   # to compile native extensions.
   #
-  # NOTE: By neccessity this tool shells out to the command line.
+  # Targets the following standard toolchain stations:
   #
-  #--
-  # TODO: win32 cross-compile ?
-  # TODO: current? method
-  #++
+  # * compile
+  # * clean
+  # * purge
+  #
+  # @note By neccessity this tool shells out to the command line.
+  #
+  # @todo Can we implement a win32 cross-compile?
   class ExtConf < Tool
 
-    # Belongs to standard assembly.
-    system :standard
-
-    #def self.available?
-    #  #... check for make tools ...
-    #end
-
+    # Works with the Standard assembly.
     #
+    # @!parse
+    #   include Standard
+    #
+    assembly Standard
+
+    # Location of manpage for tool.
+    MANPAGE = File.dirname(__FILE__) + '/../man/detroit-dnote.5'
+
+    # Platform specific make command.
     MAKE_COMMAND = ENV['make'] || (RUBY_PLATFORM =~ /(win|w)32$/ ? 'nmake' : 'make')
+
+    # Set attribute defaults.
+    #
+    # @return [void]
+    def prerequisite
+      @static = false
+    end
 
     # Compile statically? Applies only to compile method. (false)
     attr_accessor :static
 
-
-    #  A S S E M B L Y
-
-    def assemble?(station, options={})
-      case station
-      when :compile, :clean, :purge
-        compiles?
-      end
-    end
-
-    def assemble(station, options={})
-      case station
-      when :compile then compile
-      when :clean   then clean
-      when :purge   then purge
-      end
-    end
-
-
-    #  S E R V I C E  M E T H O D S
-
     # Create Makefile(s).
+    #
+    # @return [void]
     def configure
       extensions.each do |directory|
         next if File.exist?(File.join(directory, 'Makefile'))
@@ -87,12 +77,16 @@ module Detroit
       end
     end
 
-    alias_method :purge, :distclean
+    alias purge distclean
 
     # Check to see if this project has extensions that need to be compiled.
     def compiles?
       !extensions.empty?
     end
+
+    alias compile? compiles?
+    alias clean?   compiles?
+    alias purge?   compiles?
 
     # Extension directories. Often this will simply be 'ext'.
     # but sometimes more then one extension is needed and are kept
@@ -102,13 +96,24 @@ module Detroit
       @extensions ||= Dir['ext/**/*.c'].collect{ |file| File.dirname(file) }.uniq
     end
 
+    # @todo 
+    # def current?
+    # end
+
+    # This tool ties into the `compile`, `clean` and `purge` stations of the
+    # standard assembly.
+    #
+    # @return [Boolean]
+    def assemble?(station, options={})
+      return true if station == :compile
+      return true if station == :clean
+      return true if station == :purge
+      return false
+    end
+
   private
 
     #
-    def initialize_defaults
-      @static = false
-    end
-
     def make(target='')
       extensions.each do |directory|
         report "compiling #{directory}"
@@ -137,12 +142,6 @@ module Detroit
     #def make_mingw
     #  abort "NOT YET IMPLEMENTED"
     #end
-
-  public
-
-    def self.man_page
-      File.dirname(__FILE__)+'/../man/detroit-dnote.5'
-    end
 
   end
 

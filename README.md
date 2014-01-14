@@ -2,7 +2,7 @@
 
 [Website](http://rubyworks.github.com/detroit-extconf) /
 [Report Issue](http://github.com/rubyworks/detroit-extconf/issues) /
-[Source Code](http://github.com/rubyworks/detroit-extconf)
+[Development](http://github.com/rubyworks/detroit-extconf)
 
 [![Build Status](https://secure.travis-ci.org/rubyworks/detroit-extconf.png)](http://travis-ci.org/rubyworks/detroit-extconf) 
 [![Gem Version](https://badge.fury.io/rb/detroit-extconf.png)](http://badge.fury.io/rb/detroit-extconf) &nbsp; &nbsp;
@@ -28,9 +28,9 @@ NOTE: By neccessity this tool shells out to the command line.
 
 Detroit ExtConf
 
-Copyright (c) 2011 Rubyworks
+Copyright (c) 2011 Rubyworks 
 
-License GPL-3.0
+(GPL-3.0 License)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

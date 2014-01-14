@@ -41,7 +41,7 @@ For more information:
 
 ## COPYRIGHT
 
-Copyright (c) 2010 Thomas Sawyer, Rubyworks
+Copyright (c) 2010 Rubyworks
 
 Detroit ExtConf is distributable in accordance with the GPLv3 license.
 
